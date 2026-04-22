@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:3000/api"
+  baseURL: import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/api` : "https://news-hub-5gbr.onrender.com/api",
+  withCredentials: true
 });
 
 // attach token
@@ -14,6 +15,14 @@ API.interceptors.request.use((req) => {
 
   return req;
 });
+
+API.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    console.error("API Error Response:", error.response?.data || error.message);
+    return Promise.reject(error);
+  }
+);
 
 export const NewsAPI = {
   getNews: (query) => API.get(`/news${query}`),
@@ -32,8 +41,8 @@ export const NewsAPI = {
 };
 
 export const UserAPI = {
-  login: (data) => API.post("/user/login", data),
-  register: (data) => API.post("/user/register", data),
+  login: (data) => API.post("/auth/login", data),
+  register: (data) => API.post("/auth/register", data),
   getProfile: () => API.get("/user/profile"),
   updateProfile: (data) => API.put("/user/profile", data),
   toggleBookmark: (id) => API.post(`/user/bookmark/${id}`),
