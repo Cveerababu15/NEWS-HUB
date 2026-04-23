@@ -2,7 +2,7 @@
 
 NewsHub is a deeply optimized, production-level Full-Stack web application that radically improves how users consume news. Powered by the MERN stack (MongoDB, Express, React, Node.js), this platform offers AI-generated quick summaries, a dynamic "For You" recommendation engine, and extensive user-engagement tools like Recursive Deep-Comments, Real-time View Tracking, and Bookmarks.
 
-![NewsHub Hero Section](image1.png)
+![NewsHub Hero Section](frontend/src/assets/Hero.png)
 
 ## 🚀 Features
 
@@ -20,10 +20,10 @@ NewsHub is a deeply optimized, production-level Full-Stack web application that 
 ## 📸 Screenshots
 
 ### The Explore & Discovery Interface
-![Explore Interface](image2.png)
+![Explore Interface](frontend/src/assets/News.png)
 
 ### The User Profile Dashboard
-![User Profile Dashboard](image3.png)
+![User Profile Dashboard](frontend/src/assets/Profile.png)
 
 ## 🛠️ Technology Stack
 
